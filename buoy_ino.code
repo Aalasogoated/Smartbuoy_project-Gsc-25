@@ -1,0 +1,21 @@
+#include <BluetoothSerial.h>
+
+BluetoothSerial BT;  // Initialize Bluetooth module
+
+void setup() {
+  Serial.begin(115200);
+
+  // Name the Bluetooth device as the warning message in Tamil
+  BT.begin("⚠️ அபாயம்! நீங்கள் சர்வதேச எல்லையை கடந்துகொண்டு இருக்கிறீர்கள்!");  
+
+  Serial.println("Buoy System Initialized");
+}
+
+void loop() {
+  Serial.println("🚨 Fisherman approaching IMBL!");
+
+  // Send periodic Bluetooth messages (optional)
+  BT.println("⚠️ அபாயம்! நீங்கள் சர்வதேச எல்லையை கடந்துகொண்டு இருக்கிறீர்கள்!");
+
+  delay(5000);  // Wait before next alert
+}
